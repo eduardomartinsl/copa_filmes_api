@@ -18,3 +18,4 @@
 /Users/eduardomartins/Documents/Repositorios/Personal/backend/copa_filmes_api/copa_filmes_api/obj/Debug/netcoreapp3.1/copa_filmes_api.dll
 /Users/eduardomartins/Documents/Repositorios/Personal/backend/copa_filmes_api/copa_filmes_api/obj/Debug/netcoreapp3.1/copa_filmes_api.pdb
 /Users/eduardomartins/Documents/Repositorios/Personal/backend/copa_filmes_api/copa_filmes_api/obj/Debug/netcoreapp3.1/copa_filmes_api.genruntimeconfig.cache
+/Users/eduardomartins/Documents/Repositorios/Personal/backend/copa_filmes_api/copa_filmes_api/obj/Debug/netcoreapp3.1/copa_filmes_api.csprojAssemblyReference.cache

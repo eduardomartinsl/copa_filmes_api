@@ -16,7 +16,6 @@ namespace copa_filmes_api.Repository
             _filmes = filmes.OrderBy(x => x.Titulo).ToList();
             Finalistas = new List<Filme>();
 
-            var primeiroLugar = new Filme();
             var segundoLugar = new Filme();
 
             //Primeira rodada de eliminatórias
@@ -30,7 +29,7 @@ namespace copa_filmes_api.Repository
             var SextaEliminatoria = CreatePartida(TerceiraEliminatoria, QuartaEliminatoria);
 
             //finais
-            primeiroLugar = CreatePartida(quintaEliminatoria, SextaEliminatoria);
+            var primeiroLugar = CreatePartida(quintaEliminatoria, SextaEliminatoria);
 
             if(primeiroLugar == quintaEliminatoria)
             {
