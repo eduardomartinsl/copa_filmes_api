@@ -13,11 +13,11 @@ namespace copa_filmes_api.Controllers
     public class FilmesVencedoresController : ControllerBase
     {
         [HttpPost]
-        public ActionResult<string> JsonStringBody([FromBody] List<Filme> content)
+        public ActionResult<string> CalculaFilmeVencedor([FromBody] List<Filme> content)
         {
             return JsonConvert.SerializeObject(new
             {
-                result = new FilmesRepository(content).FilmeFinalista
+                result = new FilmesRepository(content).Finalistas
             });
         }
     }

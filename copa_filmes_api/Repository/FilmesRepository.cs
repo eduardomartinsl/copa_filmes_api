@@ -7,12 +7,18 @@ namespace copa_filmes_api.Repository
 {
     public class FilmesRepository
     {
-        private List<Filme> _filmes;
-        public Filme FilmeFinalista { get; set; }
+        public List<Filme> Finalistas { get; set; }
+
+        private readonly List<Filme> _filmes;
 
         public FilmesRepository(List<Filme> filmes)
         {
             _filmes = filmes.OrderBy(x => x.Titulo).ToList();
+            Finalistas = new List<Filme>();
+
+            var primeiroLugar = new Filme();
+            var segundoLugar = new Filme();
+
             //Primeira rodada de eliminatórias
             var primeiraEliminatoria = CreatePartida(_filmes[0], _filmes[7]);
             var SegundaEliminatoria = CreatePartida(_filmes[1], _filmes[6]);
@@ -24,7 +30,22 @@ namespace copa_filmes_api.Repository
             var SextaEliminatoria = CreatePartida(TerceiraEliminatoria, QuartaEliminatoria);
 
             //finais
-            FilmeFinalista = CreatePartida(quintaEliminatoria, SextaEliminatoria);
+            primeiroLugar = CreatePartida(quintaEliminatoria, SextaEliminatoria);
+
+            if(primeiroLugar == quintaEliminatoria)
+            {
+                segundoLugar = SextaEliminatoria;
+            }
+            else
+            {
+                segundoLugar = quintaEliminatoria;
+            }
+
+            primeiroLugar.Posicao = 1;
+            segundoLugar.Posicao = 2;
+
+            Finalistas.Add(primeiroLugar);
+            Finalistas.Add(segundoLugar);
 
         }
 
